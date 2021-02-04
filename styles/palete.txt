@@ -1,6 +1,8 @@
 /*
-https://coolors.co/092327-0b5351-00a9a5-4e8098-90c2e7
-
+*
+* Palete definition URL
+* https://coolors.co/092327-0b5351-00a9a5-4e8098-90c2e7
+*
 */
 
 /* CSS HEX */
