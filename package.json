@@ -1,0 +1,23 @@
+{
+  "name": "assets-gallery",
+  "version": "1.0.0",
+  "description": "A web site to access and show digital Assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build-style": "sass ./styles/styles.scss ./styles/styles.css" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davormz/assets-gallery.git"
+  },
+  "author": "davo.rmz@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davormz/assets-gallery/issues"
+  },
+  "homepage": "https://github.com/davormz/assets-gallery#readme",
+  "dependencies": {
+    "sass": "^1.32.6"
+  }
+}
