@@ -1,8 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   font-family: "Mili", sans-serif;
-  background-color: #0b5351ff;
-  /* Dark Jungle Green*/
+  background-color: #092327ff;
 }
 
 .header {
@@ -41,12 +46,10 @@ body {
 .header__menu li {
   margin: 10px 0px;
 }
-
 .header__menu li a {
   color: white;
   text-decoration: none;
 }
-
 .header__menu li a:hover {
   text-decoration: underline;
 }
@@ -57,19 +60,17 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .header__menu--profile img {
   margin-right: 8px;
   width: 40px;
 }
-
 .header__menu--profile p {
   margin: 0px;
   color: white;
 }
 
 .main {
-  height: 300px;
+  min-height: calc(100vh - 92px);
   width: 100%;
   padding-top: 80px;
   display: flex;
@@ -81,6 +82,7 @@ body {
 .main__title {
   color: white;
   font-size: 25px;
+  margin-bottom: 30px;
 }
 
 .search-input {
@@ -107,7 +109,7 @@ body {
   justify-content: center;
   flex-direction: column;
   padding: 0px 30px;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 92px);
 }
 
 .login__container {
@@ -117,17 +119,21 @@ body {
   color: white;
   padding: 60px 68px 40px;
   min-height: 700px;
-  width: 300px;
+  width: 420px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+}
+.login__container .title {
+  margin-bottom: 20px;
+  align-self: center;
+  margin-right: 15px;
 }
 
 .login__container--form {
   display: flex;
   flex-direction: column;
 }
-
 .login__container--form label {
   font-size: 14px;
 }
@@ -138,13 +144,11 @@ body {
   justify-content: space-between;
   margin-top: 10px;
 }
-
 .login__container--remember-me a {
   color: white;
   font-size: 14px;
   text-decoration: none;
 }
-
 .login__container--remember-me a:hover {
   text-decoration: underline;
 }
@@ -164,14 +168,12 @@ body {
 .login__container--register {
   font-size: 14px;
 }
-
 .login__container--register a {
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
 }
-
 .login__container--register a:hover {
   text-decoration: underline;
 }
@@ -216,7 +218,6 @@ body {
   height: 100px;
   width: 100%;
 }
-
 .footer a {
   color: white;
   cursor: pointer;
@@ -224,9 +225,29 @@ body {
   padding-left: 30px;
   text-decoration: none;
 }
-
 .footer a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 425px) {
+  .login__container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 0;
+  }
+
+  .input {
+    width: 85%;
+  }
+
+  .button {
+    width: 85%;
+  }
+
+  .login__container--remember-me {
+    width: 85%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
