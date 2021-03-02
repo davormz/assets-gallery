@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "build-style": "sass ./styles/styles.scss ./styles/styles.css" 
+    "build:style-sass": "sass ./styles/styles.scss ./styles/styles.css",
+    "build:styles-dev": "webpack --config ./webpack.config.js",
+    "build:dev-server": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,15 @@
     "url": "https://github.com/davormz/assets-gallery/issues"
   },
   "homepage": "https://github.com/davormz/assets-gallery#readme",
-  "dependencies": {
-    "sass": "^1.32.6"
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^5.1.0",
+    "html-loader": "^2.1.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
