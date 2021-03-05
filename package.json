@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "build:style-sass": "sass ./styles/styles.scss ./styles/styles.css",
-    "build:styles-dev": "webpack --config ./webpack.config.js",
+    "build:dev": "webpack --config ./webpack.config.js --mode development",
     "build:dev-server": "webpack serve --open"
   },
   "repository": {
@@ -21,6 +21,10 @@
   "homepage": "https://github.com/davormz/assets-gallery#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/preset-env": "^7.13.9",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.1.0",
     "html-loader": "^2.1.1",
     "sass": "^1.32.8",
