@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
     mode: 'development',
@@ -13,7 +14,7 @@ module.exports = {
     resolve: {
         extensions:['.js']
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         // compress: true,
@@ -77,6 +78,7 @@ module.exports = {
                     to: 'assets/icons'
                 }
             ]
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 }
