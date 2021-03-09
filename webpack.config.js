@@ -2,13 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    // mode: 'development',
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].[contenthash].js',
     },
     resolve: {
         extensions:['.js']
@@ -45,11 +47,6 @@ module.exports = {
                     "sass-loader",
                 ]
             }
-            // ,
-            // {
-            //     test: /\.html$/i,
-            //     loader: 'html-loader',
-            // }
         ]
     },
     plugins: [
@@ -68,7 +65,9 @@ module.exports = {
             template: './src/public/signup.html',
             filename: './signup.html'
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'assets/[name].[contenthash].css'
+        }),
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -80,7 +79,15 @@ module.exports = {
                     to: 'assets/icons'
                 }
             ]
-        })
-    ]
+        }),
+        new CleanWebpackPlugin()
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin()
+        ]
+    }
 
 }
