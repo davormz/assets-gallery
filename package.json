@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "build:dev": "webpack --config ./webpack.config.dev.js",
+    "build:dev-watch": "webpack --config ./webpack.config.dev.js --watch",
     "build:prod": "webpack --config ./webpack.config.js --mode production",
     "build:dev-server": "webpack serve --open"
   },
