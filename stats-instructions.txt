@@ -1,0 +1,7 @@
+
+generate stats file:
+npx webpack --profile --json > stats.json
+
+
+generate stats site
+npx webpack-bundle-analyzer stats.json
